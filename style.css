@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700');
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font: 300 70px/1 'Lato', sans-serif;
+  background: #eee;
+  background-image: url("assets/images/bg.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.clock {
+  position: absolute;
+  top: 50%;
+  margin-top: -45px;
+  text-align: center;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.clock span {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+}
+
+.clock span::before, .clock span::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  backface-visibility: hidden;
+  transition: transform 0.4s;
+}
+
+
+.clock span::before {
+  content: attr(data-old);
+  z-index: 1;
+  transform: translate3d(0, 0, 0);
+}
+
+.clock span::after {
+  content: attr(data-now);
+  z-index: 1;
+  transform: translate3d(0, -100%, 0);
+}
+
+
+.clock .flip::before {
+  transform: translate3d(0, 100%, 0);
+}
+
+.clock .flip::after {
+  transform: translate3d(0, 0, 0);
+}
+
+.slot span::after {
+  content: attr(data-now);
+  z-index: 1;
+}
+
+
+.label {
+  font: 300 30px/1 'Lato', sans-serif;
+  font-variant: small-caps;
+  text-align: center;
+  margin-top: 30px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.label .info {
+  position: relative;
+  display: inline-block;
+}
+
+.row {
+  background-color: #eeeeee8f;
+  border-radius: 25px;
+}
+
+.main-content {
+  position: relative;
+  top: 0%;
+}
