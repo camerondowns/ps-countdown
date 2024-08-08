@@ -1,4 +1,4 @@
-const target_date = new Date("August 24, 2024 00:00:00").getTime();
+const target_date = new Date("August 22, 2024 00:00:00").getTime();
 
 class Clock {
     constructor() {
